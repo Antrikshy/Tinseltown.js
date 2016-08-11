@@ -20,3 +20,7 @@ gulp.task('sass-it-up', function() {
 gulp.task('default', function() {
     gulp.run('minify-js', 'sass-it-up');
 });
+
+gulp.watch('./src/**', function(event) {
+    gulp.run('default');
+})

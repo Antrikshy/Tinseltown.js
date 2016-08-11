@@ -1,8 +1,7 @@
 {
-  "name": "hollywood-loadup",
+  "name": "tinseltown.js",
   "version": "1.0.0",
-  "description": "Front-end library to help design Hollywood style flashy load-up sequences for various elements on a page",
-  "main": "hl.js",
+  "description": "Front-end library to help design Hollywood style flashy load-up sequences for various elements on a page.",
   "author": "Antriksh Yadav",
   "license": "MIT",
   "devDependencies": {
