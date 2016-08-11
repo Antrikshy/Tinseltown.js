@@ -1,0 +1,20 @@
+@keyframes flicker {
+    0% { opacity: 0.0; }
+    10% { opacity: 1.0; }
+    20% { opacity: 0.0; }
+    30% { opacity: 1.0; }
+    40% { opacity: 0.0; }
+    50% { opacity: 1.0; }
+    60% { opacity: 0.0; }
+    70% { opacity: 1.0; }
+    80% { opacity: 0.0; }
+    90% { opacity: 1.0; }
+    100% { opacity: 1.0; }
+}
+
+.tnsl-flicker {
+    opacity: 0.0;
+    animation-duration: 1s;
+    animation-timing-function: step-end;
+    animation-fill-mode: forwards;
+}

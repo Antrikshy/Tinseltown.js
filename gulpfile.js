@@ -21,6 +21,10 @@ gulp.task('default', function() {
     gulp.run('minify-js', 'sass-it-up');
 });
 
-gulp.watch('./src/**', function(event) {
-    gulp.run('default');
-})
+gulp.watch('./src/*.js', function(event) {
+    gulp.run('minify-js');
+});
+
+gulp.watch('./src/*.scss', function(event) {
+    gulp.run('sass-it-up');
+});
