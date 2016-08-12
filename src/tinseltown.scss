@@ -1,34 +1,4 @@
-@mixin keyframes ($animation_name) {
-    @-moz-keyframes #{$animation_name} {
-        @content;
-    }
-    @-webkit-keyframes #{$animation_name} {
-        @content;
-    }
-    @keyframes #{$animation_name} {
-        @content;
-    }
-}
-
-@mixin animation_duration ($duration) {
-    -webkit-animation-duration: #{$duration};
-    -moz-animation-duration: #{$duration};
-    animation-duration: #{$duration};
-}
-
-@mixin animation_timing_function ($timing_function_name) {
-    -webkit-animation-duration: #{$timing_function_name};
-    -moz-animation-duration: #{$timing_function_name};
-    animation-timing-function: #{$timing_function_name};
-}
-
-@mixin animation_fill_mode ($fill_mode) {
-    -webkit-animation-duration: #{$fill_mode};
-    -moz-animation-duration: #{$fill_mode};
-    animation-fill-mode: #{$fill_mode};
-}
-
-@include keyframes (flicker) {
+@keyframes flicker {
     0% { opacity: 0.0; }
     10% { opacity: 1.0; }
     20% { opacity: 0.0; }
@@ -42,29 +12,25 @@
     100% { opacity: 1.0; }
 }
 
-@include keyframes (slideFromLeft) {
+@keyframes slideFromLeft {
     0% {
-        -webkit-transform: translate3d(-100%, 0, 0);
         transform: translate3d(-100%, 0, 0);
         visibility: hidden;
     }
 
     100% {
-        -webkit-transform: translate3d(0, 0, 0);
         transform: translate3d(0, 0, 0);
         visibility: visible;
     }
 }
 
-@include keyframes (slideFromRight) {
+@keyframes slideFromRight {
     0% {
-        -webkit-transform: translate3d(100%, 0, 0);
         transform: translate3d(100%, 0, 0);
         visibility: hidden;
     }
 
     100% {
-        -webkit-transform: translate3d(0, 0, 0);
         transform: translate3d(0, 0, 0);
         visibility: visible;
     }
@@ -72,24 +38,24 @@
 
 .tnsl-flicker {
     opacity: 0.0;
-    @include animation_duration (1s);
-    @include animation_timing_function (step-end);
-    @include animation_fill_mode (forwards);
+    animation-duration: 0.5s;
+    animation-timing-function: step-end;
+    animation-fill-mode: forwards;
     // animation-name added via JS
 }
 
 .tnsl-slideFromLeft {
     visibility: hidden;
-    @include animation_duration (0.3s);
-    @include animation_timing_function (ease-in);
-    @include animation_fill_mode (forwards);
+    animation-duration: 0.1s;
+    animation-timing-function: ease-in;
+    animation-fill-mode: forwards;
     // animation-name added via JS
 }
 
 .tnsl-slideFromRight {
     visibility: hidden;
-    @include animation_duration (0.3s);
-    @include animation_timing_function (ease-in);
-    @include animation_fill_mode (forwards);
+    animation-duration: 0.1s;
+    animation-timing-function: ease-in;
+    animation-fill-mode: forwards;
     // animation-name added via JS
 }

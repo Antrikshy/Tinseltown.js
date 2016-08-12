@@ -7,12 +7,18 @@
     <link rel="stylesheet" type="text/css" href="../tinseltown.min.css">
 
     <link rel="stylesheet" type="text/css" href="./styles.css">
+
+    <!-- Run tnslInit() whenever you are ready to play your loading animations -->
+
+    <script type="text/javascript">
+        window.onload = tnslInit;
+    </script>
 </head>
 <body>
     <h1>Tinseltown.js</h1>
     <div class="left-col">
         
-        <!-- Just add this class to any element: -->
+        <!-- Just add effect classes to any element: -->
 
         <div class="demo-square tnsl-flicker"></div>
         <div class="demo-square tnsl-slideFromLeft"></div>
@@ -25,7 +31,7 @@
         <p class="tnsl-flicker">All this flashiness you see is inspired by those faux high-tech Hollywood effects you see on computer screens in hacker movies. I wonder if having constantly flickering screens in the real world would get old.</p>
     </div>
     <div class="right-col">
-        <div class="demo-square tnsl-flicker"></div>
+        <div class="demo-square tnsl-random"></div>
         <div class="demo-square tnsl-flicker"></div>
         <div class="demo-square tnsl-slideFromRight"></div>
     </div>

@@ -1,6 +1,7 @@
 var gulp = require('gulp');
 var jsmin = require('gulp-jsmin');
 var sass = require('gulp-sass');
+var autoprefixer = require('gulp-autoprefixer');
 var rename = require('gulp-rename');
 
 gulp.task('minify-js', function() {
@@ -13,6 +14,7 @@ gulp.task('minify-js', function() {
 gulp.task('sass-it-up', function() {
     gulp.src('./src/*.scss')
         .pipe(sass({outputStyle: 'compressed'}).on('error', sass.logError))
+        .pipe(autoprefixer({browsers: ['last 2 versions', '> 1%', 'Firefox ESR']}))
         .pipe(rename({suffix: '.min'}))
         .pipe(gulp.dest('.'));
 });
