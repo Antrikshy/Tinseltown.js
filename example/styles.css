@@ -1,11 +1,41 @@
 body {
     padding: 10px;
+    color: #333;
     background-color: #eee;
+    font-family: "Georgia", serif
 }
 
-.tnsl-flicker {
+h1 {
+    font-size: 48pt;
+    text-align: center;
+}
+
+p {
+    font-size: 16pt;
+}
+
+.demo-square {
     width: 200px;
     height: 200px;
+    display: inline-block;
     background-color: #333;
     margin: 10px;
+}
+
+.left-col {
+    text-align: left;
+    float: left;
+    width: 30%;
+}
+
+.center-col {
+    float: left;
+    width: 40%;
+    padding-top: 100px;
+}
+
+.right-col {
+    text-align: right;
+    float: left;
+    width: 30%;
 }

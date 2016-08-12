@@ -2,20 +2,31 @@
     <title>Tinseltown.js Demo</title>
 
     <!-- Include Tinseltown.js -->
+
     <script type="text/javascript" src="../tinseltown.min.js"></script>
     <link rel="stylesheet" type="text/css" href="../tinseltown.min.css">
 
     <link rel="stylesheet" type="text/css" href="./styles.css">
 </head>
 <body>
-    <div style="float: left;">
-        <div class="tnsl-flicker"></div>
-        <div class="tnsl-flicker"></div>
-        <div class="tnsl-flicker"></div>
+    <h1>Tinseltown.js</h1>
+    <div class="left-col">
+        
+        <!-- Just add this class to any element: -->
+
+        <div class="demo-square tnsl-flicker"></div>
+        <div class="demo-square tnsl-slideFromLeft"></div>
+        <div class="demo-square tnsl-flicker"></div>
     </div>
-    <div style="float: right;">
-        <div class="tnsl-flicker"></div>
-        <div class="tnsl-flicker"></div>
-        <div class="tnsl-flicker"></div>
+    <div class="center-col">
+
+        <!-- Works on all elements, even paragraphs! -->
+
+        <p class="tnsl-flicker">All this flashiness you see is inspired by those faux high-tech Hollywood effects you see on computer screens in hacker movies. I wonder if having constantly flickering screens in the real world would get old.</p>
+    </div>
+    <div class="right-col">
+        <div class="demo-square tnsl-flicker"></div>
+        <div class="demo-square tnsl-flicker"></div>
+        <div class="demo-square tnsl-slideFromRight"></div>
     </div>
 </body>
