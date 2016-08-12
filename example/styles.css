@@ -15,6 +15,10 @@ p {
     text-align: center;
 }
 
+span.monospace {
+    font-family: "Courier New" monospace;
+}
+
 .demo-square {
     width: 200px;
     height: 200px;
