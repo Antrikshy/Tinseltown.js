@@ -1,12 +1,12 @@
 var gulp = require('gulp');
-var jsmin = require('gulp-jsmin');
+var uglify = require('gulp-uglify');
 var sass = require('gulp-sass');
 var autoprefixer = require('gulp-autoprefixer');
 var rename = require('gulp-rename');
 
 gulp.task('minify-js', function() {
     gulp.src('src/*.js')
-        .pipe(jsmin())
+        .pipe(uglify())
         .pipe(rename({suffix: '.min'}))
         .pipe(gulp.dest('.'));
 });
@@ -20,13 +20,13 @@ gulp.task('sass-it-up', function() {
 });
 
 gulp.task('default', function() {
-    gulp.run('minify-js', 'sass-it-up');
+    gulp.start('minify-js', 'sass-it-up');
 });
 
 gulp.watch('./src/*.js', function(event) {
-    gulp.run('minify-js');
+    gulp.start('minify-js');
 });
 
 gulp.watch('./src/*.scss', function(event) {
-    gulp.run('sass-it-up');
+    gulp.start('sass-it-up');
 });

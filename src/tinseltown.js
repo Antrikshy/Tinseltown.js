@@ -8,6 +8,7 @@ function initAnimation(animationName) {
 
 function tnslPlayFlicker() {
     initAnimation("flicker");
+    initAnimation("flickerQuick");
 }
 
 function tnslPlaySlideFromLeft() {
@@ -19,18 +20,17 @@ function tnslPlaySlideFromRight() {
 }
 
 function tnslPlaySlide() {
-    initSlideFromLeft();
-    initSlideFromRight();
+    tnslPlaySlideFromLeft();
+    tnslPlaySlideFromRight();
 }
 
 function tnslPlayAll() {
-    initAnimation("flicker");
-    initAnimation("slideFromLeft");
-    initAnimation("slideFromRight");
+    tnslPlayFlicker();
+    tnslPlaySlide();
 }
 
 function tnslReplaceRandom(animations) {
-    if (animations === undefined) animations = ["flicker", "slideFromLeft", "slideFromRight"];
+    if (animations === undefined) animations = ["flicker", "flickerQuick", "slideFromLeft", "slideFromRight"];
     var re = document.getElementsByClassName("tnsl-random");
     
     for (var i = 0; i < re.length; i++) {

@@ -12,6 +12,15 @@
     100% { opacity: 1.0; }
 }
 
+@keyframes flickerQuick {
+    0% { opacity: 0.0; }
+    20% { opacity: 1.0; }
+    40% { opacity: 0.0; }
+    60% { opacity: 1.0; }
+    80% { opacity: 0.0; }
+    100% { opacity: 1.0; }
+}
+
 @keyframes slideFromLeft {
     0% {
         transform: translate3d(-100%, 0, 0);
@@ -39,7 +48,15 @@
 .tnsl-flicker {
     opacity: 0.0;
     animation-duration: 0.5s;
-    animation-timing-function: step-end;
+    animation-timing-function: steps;
+    animation-fill-mode: forwards;
+    // animation-name added via JS
+}
+
+.tnsl-flickerQuick {
+    opacity: 0.0;
+    animation-duration: 0.1s;
+    animation-timing-function: steps;
     animation-fill-mode: forwards;
     // animation-name added via JS
 }
