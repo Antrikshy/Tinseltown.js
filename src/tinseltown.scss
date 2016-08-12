@@ -45,34 +45,32 @@
     }
 }
 
+@mixin animation_settings ($duration, $timing_func, $fill_mode) {
+    animation-duration: $duration;
+    animation-timing-function: $timing_func;
+    animation-fill-mode: $fill_mode;
+}
+
 .tnsl-flicker {
     opacity: 0.0;
-    animation-duration: 0.5s;
-    animation-timing-function: steps;
-    animation-fill-mode: forwards;
+    @include animation_settings (0.5s, steps, forwards);
     // animation-name added via JS
 }
 
 .tnsl-flickerQuick {
     opacity: 0.0;
-    animation-duration: 0.1s;
-    animation-timing-function: steps;
-    animation-fill-mode: forwards;
+    @include animation_settings (0.2s, steps, forwards);
     // animation-name added via JS
 }
 
 .tnsl-slideFromLeft {
     visibility: hidden;
-    animation-duration: 0.1s;
-    animation-timing-function: ease-in;
-    animation-fill-mode: forwards;
+    @include animation_settings (0.1s, steps, forwards);
     // animation-name added via JS
 }
 
 .tnsl-slideFromRight {
     visibility: hidden;
-    animation-duration: 0.1s;
-    animation-timing-function: ease-in;
-    animation-fill-mode: forwards;
+    @include animation_settings (0.1s, steps, forwards);
     // animation-name added via JS
 }

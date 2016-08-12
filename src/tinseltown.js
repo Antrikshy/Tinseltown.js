@@ -1,40 +1,40 @@
-function initAnimation(animationName) {
-    var fe = document.getElementsByClassName("tnsl-" + animationName);
-    for (var i = 0; i < fe.length; i++) {
-        fe[i].style.webkitAnimationDelay = (Math.random() * 1 + 0) + "s";
-        fe[i].style.animationName = animationName;
+function initAnimation(animationName, maxDelay) {
+    var elements = document.getElementsByClassName("tnsl-" + animationName);
+    for (var i = 0; i < elements.length; i++) {
+        elements[i].style.webkitAnimationDelay = (Math.random() * maxDelay + 0) + "s";
+        elements[i].style.animationName = animationName;
     }
 }
 
-function tnslPlayFlicker() {
-    initAnimation("flicker");
-    initAnimation("flickerQuick");
+function tnslPlayFlicker(maxDelay) {
+    initAnimation("flicker", maxDelay);
+    initAnimation("flickerQuick", maxDelay);
 }
 
-function tnslPlaySlideFromLeft() {
-    initAnimation("slideFromLeft");
+function tnslPlaySlideFromLeft(maxDelay) {
+    initAnimation("slideFromLeft", maxDelay);
 }
 
-function tnslPlaySlideFromRight() {
-    initAnimation("slideFromRight");
+function tnslPlaySlideFromRight(maxDelay) {
+    initAnimation("slideFromRight", maxDelay);
 }
 
-function tnslPlaySlide() {
-    tnslPlaySlideFromLeft();
-    tnslPlaySlideFromRight();
+function tnslPlaySlide(maxDelay) {
+    tnslPlaySlideFromLeft(maxDelay);
+    tnslPlaySlideFromRight(maxDelay);
 }
 
-function tnslPlayAll() {
-    tnslPlayFlicker();
-    tnslPlaySlide();
+function tnslPlayAll(maxDelay) {
+    tnslPlayFlicker(maxDelay);
+    tnslPlaySlide(maxDelay);
 }
 
 function tnslReplaceRandom(animations) {
     if (animations === undefined) animations = ["flicker", "flickerQuick", "slideFromLeft", "slideFromRight"];
-    var re = document.getElementsByClassName("tnsl-random");
+    var elements = document.getElementsByClassName("tnsl-random");
     
-    for (var i = 0; i < re.length; i++) {
-        var element = re[i];
+    while (elements.length) {
+        var element = elements[0];
         var randomClass = "tnsl-" + animations[Math.floor((Math.random() * animations.length + 0))];
         
         element.classList.remove("tnsl-random");
@@ -42,7 +42,9 @@ function tnslReplaceRandom(animations) {
     }
 }
 
-function tnslInit() {
+function tnslInit(maxDelay) {
+    if (maxDelay === undefined) maxDelay = 1;
+
     tnslReplaceRandom();
-    tnslPlayAll();
+    tnslPlayAll(maxDelay);
 }

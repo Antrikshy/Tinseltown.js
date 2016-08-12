@@ -11,7 +11,7 @@
     <!-- Run tnslInit() whenever you are ready to play your loading animations -->
 
     <script type="text/javascript">
-        window.onload = tnslInit;
+        window.onload = function() { tnslInit(3); };
     </script>
 </head>
 <body>
@@ -26,13 +26,16 @@
     </div>
     <div class="center-col">
 
-        <!-- Works on all elements, even paragraphs! -->
+        <!-- Works on all sorts of elements! -->
 
         <p class="tnsl-flicker">All this flashiness you see is inspired by those faux high-tech Hollywood effects you see on computer screens in hacker movies. I wonder if having constantly flickering screens in the real world would get old.</p>
     </div>
     <div class="right-col">
+
+        <!-- Add the random class if you like surprises -->
+
         <div class="demo-square tnsl-random"></div>
-        <div class="demo-square tnsl-flicker"></div>
         <div class="demo-square tnsl-slideFromRight"></div>
+        <div class="demo-square tnsl-random"></div>
     </div>
 </body>
