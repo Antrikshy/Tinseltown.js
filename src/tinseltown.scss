@@ -1,3 +1,8 @@
+$tnsl-flicker-duration: 0.5s !default;
+$tnsl-flickerQuick-duration: 0.2s !default;
+$tnsl-slideFromLeft-duration: 0.1s !default;
+$tnsl-slideFromRight-duration: 0.1s !default;
+
 @keyframes flicker {
     0% { opacity: 0.0; }
     10% { opacity: 1.0; }
@@ -53,24 +58,24 @@
 
 .tnsl-flicker {
     opacity: 0.0;
-    @include animation_settings (0.5s, steps, forwards);
+    @include animation_settings ($tnsl-flicker-duration, steps, forwards);
     // animation-name added via JS
 }
 
 .tnsl-flickerQuick {
     opacity: 0.0;
-    @include animation_settings (0.2s, steps, forwards);
+    @include animation_settings ($tnsl-flickerQuick-duration, steps, forwards);
     // animation-name added via JS
 }
 
 .tnsl-slideFromLeft {
     visibility: hidden;
-    @include animation_settings (0.1s, steps, forwards);
+    @include animation_settings ($tnsl-slideFromLeft-duration, steps, forwards);
     // animation-name added via JS
 }
 
 .tnsl-slideFromRight {
     visibility: hidden;
-    @include animation_settings (0.1s, steps, forwards);
+    @include animation_settings ($tnsl-slideFromRight-duration, steps, forwards);
     // animation-name added via JS
 }

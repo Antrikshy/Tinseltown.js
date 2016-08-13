@@ -8,29 +8,6 @@ function initAnimation(animationName, maxDelay) {
     }
 }
 
-function tnslPlayFlicker(maxDelay) {
-    initAnimation("flicker", maxDelay);
-    initAnimation("flickerQuick", maxDelay);
-}
-
-function tnslPlaySlideFromLeft(maxDelay) {
-    initAnimation("slideFromLeft", maxDelay);
-}
-
-function tnslPlaySlideFromRight(maxDelay) {
-    initAnimation("slideFromRight", maxDelay);
-}
-
-function tnslPlaySlide(maxDelay) {
-    tnslPlaySlideFromLeft(maxDelay);
-    tnslPlaySlideFromRight(maxDelay);
-}
-
-function tnslPlayAll(maxDelay) {
-    tnslPlayFlicker(maxDelay);
-    tnslPlaySlide(maxDelay);
-}
-
 // Assigns random animations to all elements with class tnsl-random
 function tnslReplaceRandom(animations) {
     if (animations === undefined) animations = ["flicker", "flickerQuick", "slideFromLeft", "slideFromRight"];
@@ -45,10 +22,47 @@ function tnslReplaceRandom(animations) {
     }
 }
 
+function tnslPlayFlicker(maxDelay) {
+    if (maxDelay === undefined) maxDelay = 1;
+    initAnimation("flicker", maxDelay);
+}
+
+function tnslPlayFlickerQuick(maxDelay) {
+    if (maxDelay === undefined) maxDelay = 1;
+    initAnimation("flickerQuick", maxDelay);
+}
+
+function tnslPlaySlideFromLeft(maxDelay) {
+    if (maxDelay === undefined) maxDelay = 1;
+    initAnimation("slideFromLeft", maxDelay);
+}
+
+function tnslPlaySlideFromRight(maxDelay) {
+    if (maxDelay === undefined) maxDelay = 1;
+    initAnimation("slideFromRight", maxDelay);
+}
+
+function tnslPlayAllFlicker(maxDelay) {
+    if (maxDelay === undefined) maxDelay = 1;
+    initAnimation("flicker", maxDelay);
+    initAnimation("flickerQuick", maxDelay);
+}
+
+function tnslPlayAllSlide(maxDelay) {
+    if (maxDelay === undefined) maxDelay = 1;
+    tnslPlaySlideFromLeft(maxDelay);
+    tnslPlaySlideFromRight(maxDelay);
+}
+
+function tnslPlayAll(maxDelay) {
+    if (maxDelay === undefined) maxDelay = 1;
+    tnslPlayFlicker(maxDelay);
+    tnslPlaySlide(maxDelay);
+}
+
 // Replaces all randoms, triggers everything (main entry point in many cases)
 function tnslInit(maxDelay) {
     if (maxDelay === undefined) maxDelay = 1;
-
     tnslReplaceRandom();
     tnslPlayAll(maxDelay);
 }
