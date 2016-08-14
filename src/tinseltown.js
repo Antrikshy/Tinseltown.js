@@ -56,11 +56,11 @@ function tnslPlayAllSlide(maxDelay) {
 
 function tnslPlayAll(maxDelay) {
     if (maxDelay === undefined) maxDelay = 1;
-    tnslPlayFlicker(maxDelay);
-    tnslPlaySlide(maxDelay);
+    tnslPlayAllFlicker(maxDelay);
+    tnslPlayAllSlide(maxDelay);
 }
 
-// Replaces all randoms, triggers everything (main entry point in many cases)
+// Replaces all randoms, triggers everything (main entry point in basic use)
 function tnslInit(maxDelay) {
     if (maxDelay === undefined) maxDelay = 1;
     tnslReplaceRandom();
