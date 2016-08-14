@@ -3,21 +3,70 @@
   <meta name="description" content="Tinseltown.js is a lightweight (< 4KB) CSS/JS library for flashy Hollywood-style page loading effects.">
 
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+  <link rel="stylesheet" type="text/css" href="lib/tinseltown.min.css">
+  <script type="text/javascript" src="lib/tinseltown.min.js"></script>
 
   <link rel="stylesheet" type="text/css" href="lib/styles.css">
-  <script type="text/javascript" src="lib/scripts.js"></script>
+  <script type="text/javascript">
+    window.onload = function() { tnslInit(1); };
+  </script>
 </head>
 
 <body>
-  <section class="tnsl-flicker hero is-dark is-medium">
+  <section class="hero is-warning is-large is-bold">
     <div class="hero-body">
-      <div class="container">
-        <h1 class="title">
-          Tinseltown.js
-        </h1>
-        <h2 class="subtitle">
-          A lightweight framework for faux Hollywood-style page loading effects.
-        </h2>
+      <div class="tnsl-flicker container">
+        <h1 class="title">Tinseltown.js</h1>
+        <h2 class="subtitle">A lightweight library for faux Hollywood-style page loading effects.</h2>
+      </div>
+    </div>
+  </section>
+  <section class="section">
+    <div class="container content is-medium has-text-centered">
+      <div class="columns">
+        <div class="column">
+          <span class="tnsl-random icon"><i class="fa fa-hourglass-half" aria-hidden="true"></i></span>
+          <p class="tnsl-flickerQuick"><strong>Less than <em>4KB</em> in size</strong></p>
+        </div>
+        <div class="column">
+          <span class="tnsl-random icon"><i class="fa fa-align-left" aria-hidden="true"></i></span>
+          <p class="tnsl-flickerQuick"><strong>One line of JavaScript</strong></p>
+        </div>
+        <div class="column">
+          <span class="tnsl-random icon"><i class="fa fa-code" aria-hidden="true"></i></span>
+          <p class="tnsl-flickerQuick"><strong>Simple <em>yet</em> flexible</strong></p>
+        </div>
+        <div class="column">
+          <span class="tnsl-random icon"><i class="fa fa-random" aria-hidden="true"></i></span>
+          <p class="tnsl-flickerQuick"><strong>Powered by randomness</strong></p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <section class="hero is-light is-medium">
+    <div class="hero-body has-text-centered">
+      <a class="tnsl-slideFromLeft button is-large">
+        <span class="icon"><i class="fa fa-cloud-download" aria-hidden="true"></i></span>
+        &nbsp;Download
+      </a>
+      <a class="tnsl-slideFromRight button is-large">
+        <span class="icon"><i class="fa fa-file-text-o" aria-hidden="true"></i></span>
+        &nbsp;Docs
+      </a>
+    </div>
+  </section>
+  <section class="hero is-small is-warning is-bold">
+    <div class="hero-body">
+      <div class="container has-text-centered">
+        <p class="tnsl-random"><span class="icon"><i class="fa fa-info-circle" aria-hidden="true"></i></span> Refresh this page a few times and notice the randomness.</p>
+      </div>
+    </div>
+  </section>
+  <section class="footer">
+    <div class="container">
+      <div class="content has-text-centered">
+        <p>Designed by <a href="http://antrikshy.com">Antriksh Yadav</a>.</p>
+        <a href="#"><span class="icon-large"><i class="fa fa-code-fork" aria-hidden="true"></i></span></a>
       </div>
     </div>
   </section>
