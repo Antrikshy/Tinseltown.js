@@ -1,0 +1,15 @@
+{
+  "name": "Tinseltown.js-Web",
+  "version": "1.0.0",
+  "description": "Website for the Tinseltown.js front-end library.",
+  "author": "Antriksh Yadav",
+  "license": "MIT",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-autoprefixer": "^3.1.0",
+    "gulp-sass": "^2.3.2"
+  },
+  "dependencies": {
+    "bulma": "^0.1.2"
+  }
+}
