@@ -10,7 +10,7 @@
   <link rel="stylesheet" type="text/css" href="lib/styles.css">
 
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
-  
+
   <script type="text/javascript">
     window.onload = function() { tnslInit(1); };
   </script>
@@ -19,9 +19,9 @@
 <body>
   <section class="hero is-primary is-medium">
     <div class="hero-body">
-      <div class="tnsl-flicker container">
+      <div class="container">
         <h1 class="title">Tinseltown.js</h1>
-        <h2 class="subtitle">A lightweight library for faux Hollywood-style page loading effects.</h2>
+        <h2 class="tnsl-flickerQuick subtitle">A lightweight library for faux Hollywood-style page loading effects.</h2>
       </div>
     </div>
   </section>
@@ -47,17 +47,52 @@
       </div>
     </div>
   </section>
+  <section class="section">
+    <div class="container">
+      <div class="content">
+        <div class="columns">
+          <div class="tnsl-random column is-4">
+            <h2>What is Tinseltown.js?</h2>
+          </div>
+          <div class="tnsl-random column is-8">
+            <p>Tinseltown.js is a small library to help design UI with flashy loading effects like the ones we see in media, from low-budget hacker movies to futuristic sci-fi blockbusters... Stuff you would find on <a href="http://www.reddit.com/r/itsaunixsystem">/r/itsaunixsystem</a>.</p>
+          </div>
+        </div>
+        <div class="columns">
+          <div class="tnsl-random column is-4">
+            <h2>"Tinseltown"...?</h2>
+          </div>
+          <div class="tnsl-random column is-8">
+            <p>Tinseltown is a nickname for Hollywood, where we get some of our cheesiest hacker movies and TV shows from. Tinsel (the decorative material) also happens to be shiny and glittery, sort of like the effects included in Tinseltown.js. :D</p>
+          </div>
+        </div>
+        <div class="columns">
+          <div class="tnsl-random column is-4">
+            <h2>So, how does this work?</h2>
+          </div>
+          <div class="tnsl-random column is-8">
+            <p>Tinseltown.js consists of two tiny files.</p>
+            <ol>
+              <li>A JS file, which assigns random (or not, if you prefer) animations, assigns random animation start times, and provides several utility functions for more control.</li>
+              <li>A CSS file, containing a few CSS-based (efficient!) animations, and a class-based API system used by Tinseltown.js. Choose from <code>tnsl-flicker</code>, <code>tnsl-flickerQuick</code>, <code>tnsl-slideFromLeft</code>, <code>tnsl-slideFromRight</code> or <code>tnsl-random</code> (see documentation for more info).</li>
+            </ol>
+            <p>The CSS file contains animations which would otherwise look meh. But Tinseltown.js uses <code>Math.random</code> to put some life into them. By offsetting start times of the animations, web pages look like something straight out of The Matrix.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
   <section class="section is-medium">
     <div class="has-text-centered">
       <div class="content is-large">
-        <span class="tnsl-random icon-large"><i class="fa fa-unlock-alt fa-lg" aria-hidden="true"></i></span>
-        <p class="tnsl-flickerQuick"><strong>No dependencies!</strong></p>
+        <span class="icon-large"><i class="fa fa-unlock-alt fa-lg" aria-hidden="true"></i></span>
+        <p><strong>No dependencies!</strong></p>
       </div>
-      <a class="tnsl-slideFromLeft button is-large is-primary">
+      <a class="button is-large is-primary">
         <span class="icon"><i class="fa fa-cloud-download" aria-hidden="true"></i></span>
         &nbsp;Download
       </a>
-      <a class="tnsl-slideFromRight button is-large is-primary">
+      <a class="button is-large is-primary">
         <span class="icon"><i class="fa fa-file-text-o" aria-hidden="true"></i></span>
         &nbsp;Docs
       </a>
@@ -66,7 +101,7 @@
   <section class="footer">
     <div class="container">
       <div class="content has-text-centered">
-        <p class="tnsl-random"><span class="icon"><i class="fa fa-info-circle fa-1x" aria-hidden="true"></i></span> Refresh this page a few times and notice the randomness.</p>
+        <p class="><span class="icon"><i class="fa fa-info-circle fa-1x" aria-hidden="true"></i></span> Refresh this page a few times and notice the randomness.</p>
         <p>Designed by <a href="http://antrikshy.com">Antriksh Yadav</a>.</p>
         <a href="#" class="icon">
           <i class="fa fa-code-fork" aria-hidden="true"></i>
