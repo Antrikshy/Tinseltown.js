@@ -1,14 +1,16 @@
+$primary: #E3D081;
+
 @import "../node_modules/bulma/sass/utilities/utilities";
 
 $family-primary: $family-monospace;
-$primary: $yellow;
-
-$link: $primary;
 
 $size-large: $size-1;
 $size-medium: $size-3;
 
-@import "../node_modules/bulma/sass/base/base";
-@import "../node_modules/bulma/sass/elements/elements";
-@import "../node_modules/bulma/sass/components/components";
-@import "../node_modules/bulma/sass/layout/layout";
+@import "../node_modules/bulma/bulma";
+
+#hero-bottom-line {
+    p {
+        margin-top: 10px;
+    }
+}
