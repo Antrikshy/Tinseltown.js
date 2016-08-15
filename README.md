@@ -2,7 +2,7 @@
 
 Tinseltown is a small (< 4KB) JS and CSS front-end library to add faux flicker loading effects, a la Hollywood hacker movies, to various elements on a web page.
 
-// TODO: Add demo gif here
+**Visit [the website](http://antrikshy.github.io/Tinseltown.js) for a demo.**
 
 Tinseltown uses CSS animations for the effects themselves, but needs to have a small JavaScript component (< 1KB) to actually make it work. What makes these effects work is randomness. When the animations are initiated, they are given random `animation-delay` values as offsets; otherwise they would all play in sync, invalidating the purpose.
 
@@ -110,3 +110,13 @@ Triggers all animations.
 #### `tnslInit([maxDelay])`
 
 Processes all `tnsl-random` elements *and* triggers all animations.
+
+## Contribute
+
+Tinseltown.js could use some help. If you find issues, or just want to contribute improvements, feel free to clone, modify, **test** and send pull requests. Additionally, you can contact me [@Antrikshy](https://twitter.com/Antrikshy) or via private messaging [on reddit](https://reddit.com/u/Antrikshy).
+
+### Potential Features
+
+1. **Add support for scrolling.** It would be nice to either support scroll-activated animation triggers natively, or at least allow users to trigger all animations inside a supplied DOM element, so that they can set it up themselves.
+2. Maybe allow users to select a random flicker animation only or slide animation only.
+3. Come up with more hacker-style CSS animations.
