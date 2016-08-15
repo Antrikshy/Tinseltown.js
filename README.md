@@ -2,13 +2,13 @@
 
 Tinseltown is a small (< 4KB) JS and CSS front-end library to add faux flicker loading effects, a la Hollywood hacker movies, to various elements on a web page.
 
-**Visit [the website](http://antrikshy.github.io/Tinseltown.js) for a demo.**
+**Visit [the website](http://antrikshy.github.io/Tinseltown.js) for a demo.** Or clone this repo and take a look at `examples/basic.html`.
 
-Tinseltown uses CSS animations for the effects themselves, but needs to have a small JavaScript component (< 1KB) to actually make it work. What makes these effects work is randomness. When the animations are initiated, they are given random `animation-delay` values as offsets; otherwise they would all play in sync, invalidating the purpose.
+Tinseltown uses CSS animations for the effects themselves, but needs to have a small JavaScript component (< 1KB) to actually make it work. What makes these effects work is randomness. When the animations aresec initiated, they are given random `animation-delay` values as offsets; otherwise they would all play in sync, invalidating the purpose.
 
 ## Getting Started
 
-The **easiest method** is to simply drop the compiled tinseltown.min.js and tinseltown.min.css files from the root folder of this repo into the front-end of whatever web project you are working on. You can now skip to the Usage section and use everything as-is.
+The **easiest method** is to simply drop the compiled tinseltown.min.js and tinseltown.min.css files from the root folder of this repo into the front-end of whatever web project you are working on. You can now skip to the [Usage](#usage) section and use everything as-is.
 
 ### Customizing Animation Timings (Advanced)
 
@@ -40,7 +40,7 @@ In many cases, however, your design may benefit from some randomness. This is wh
 
     tnsl-random
 
-When you trigger the basic case (described in the next section), all elements with the `tnsl-random` class are first randomly assigned one of the above animation classes before playing. Every time the page loads, your `tnsl-random` classes may get a different set of effects.
+When you trigger the basic case (described in the [next section](#basic-trigger)), all elements with the `tnsl-random` class are first randomly assigned one of the above animation classes before playing. Every time the page loads, your `tnsl-random` classes may get a different set of effects.
 
 ### Basic Trigger
 
@@ -77,7 +77,7 @@ Optionally provide it an array of animation names, esp. if you do not want it to
 
 #### The **`maxDelay`** argument
 
-For info on the optional `maxDelay` argument accepted by the following functions, refer to the Basic Trigger section above.
+For info on the optional `maxDelay` argument accepted by the following functions, refer to the [Basic Trigger](#basic-trigger) section.
 
 #### `tnslPlayFlicker([maxDelay])`
 
