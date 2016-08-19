@@ -2,7 +2,7 @@
 function initAnimation(animationName, maxDelay) {
     var elements = document.getElementsByClassName("tnsl-" + animationName);
     for (var i = 0; i < elements.length; i++) {
-        elements[i].style.webkitAnimationDelay = (Math.random() * maxDelay + 0) + "s";
+        elements[i].style.animationDelay = (Math.random() * maxDelay + 0) + "s";
         // CSS animation is triggered by setting name
         elements[i].style.animationName = animationName;
     }
