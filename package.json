@@ -1,19 +1,19 @@
 {
   "name": "Tinseltown.js",
   "version": "1.0.0",
-  "repository" : { 
-    "type" : "git",
-    "url" : "https://github.com/Antrikshy/Tinseltown.js"
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Antrikshy/Tinseltown.js"
   },
   "homepage": "http://antrikshy.github.io/Tinseltown.js",
   "description": "Front-end library to help design Hollywood style flashy load-up sequences for various elements on a page.",
   "author": "Antriksh Yadav",
   "license": "MIT",
   "devDependencies": {
-    "gulp": "^3.9.1",
-    "gulp-autoprefixer": "^3.1.0",
-    "gulp-rename": "^1.2.2",
-    "gulp-sass": "^2.3.2",
-    "gulp-uglify": "^2.0.0"
+    "gulp": "^4.0.2",
+    "gulp-autoprefixer": "^7.0.1",
+    "gulp-rename": "^1.4.0",
+    "gulp-sass": "^4.0.2",
+    "gulp-uglify": "^3.0.2"
   }
 }

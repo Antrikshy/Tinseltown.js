@@ -1,32 +1,30 @@
-var gulp = require('gulp');
-var uglify = require('gulp-uglify');
-var sass = require('gulp-sass');
-var autoprefixer = require('gulp-autoprefixer');
-var rename = require('gulp-rename');
+const gulp = require('gulp');
+const uglify = require('gulp-uglify');
+const sass = require('gulp-sass');
+const autoprefixer = require('gulp-autoprefixer');
+const rename = require('gulp-rename');
 
-gulp.task('minify-js', function() {
+function minifyJs(cb) {
     gulp.src('src/*.js')
         .pipe(uglify())
         .pipe(rename({suffix: '.min'}))
         .pipe(gulp.dest('.'));
-});
+        cb();
+};
 
-gulp.task('sass-it-up', function() {
+function sassItUp(cb) {
     gulp.src('./src/*.scss')
         .pipe(sass({outputStyle: 'compressed'}).on('error', sass.logError))
-        .pipe(autoprefixer({browsers: ['last 2 versions', '> 1%', 'Firefox ESR']}))
+        .pipe(autoprefixer())
         .pipe(rename({suffix: '.min'}))
         .pipe(gulp.dest('.'));
-});
+        cb();
+};
 
-gulp.task('default', function() {
-    gulp.start('minify-js', 'sass-it-up');
-});
+function watchFiles() {
+    gulp.watch('./src/*.js', minifyJs);
+    gulp.watch('./src/*.scss', sassItUp);
+}
 
-gulp.watch('./src/*.js', function(event) {
-    gulp.start('minify-js');
-});
-
-gulp.watch('./src/*.scss', function(event) {
-    gulp.start('sass-it-up');
-});
+exports.default = gulp.parallel(minifyJs, sassItUp);
+exports.watch = watchFiles;
