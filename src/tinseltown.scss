@@ -79,3 +79,7 @@ $tnsl-slideFromRight-duration: 0.1s !default;
     @include animation_settings ($tnsl-slideFromRight-duration, steps, forwards);
     // animation-name added via JS
 }
+
+.tnsl-random{
+    visibility: hidden;
+}
