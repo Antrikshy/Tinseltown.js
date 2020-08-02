@@ -118,7 +118,7 @@ Tinseltown.js could use some help. If you find issues, or just want to contribut
 1. Have Node.js and npm installed.
 2. Clone this repo and run `npm install` at the top level.
 3. Edit src/tinseltown.js and src/tinseltown.scss.
-4. Run `gulp` to build the tinseltown.min.* files (do not edit these files directly). Optionally, run `gulp watch` to update the minified files as you make your edits in src.
+4. Run `npx gulp` to build the tinseltown.min.* files (do not edit these files directly). Optionally, run `npx gulp watch` to update the minified files as you make your edits in src.
 5. Open example/basic.html in your browser or import these minified files into your own local HTML file to test visually.
 
 You can contact me [@Antrikshy](https://twitter.com/Antrikshy) or via private messaging [on reddit](https://reddit.com/u/Antrikshy).
