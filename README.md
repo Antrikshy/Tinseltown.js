@@ -1,6 +1,8 @@
 # Tinseltown.js
 
-Tinseltown is a small (~8KB) JS and CSS front-end library to add faux flicker loading effects, a la Hollywood hacker movies, to various elements on a web page.
+> ⚠️ v2.0.0 is ready, but not yet published to npm. Consider it a work in progress. Built versions - dist/tinseltown.umd.min.js and dist/tinseltown.min.css - are ready for use.
+
+Tinseltown is a small (< 4KB) JS and CSS front-end library to add faux flicker loading effects, a la Hollywood hacker movies, to various elements on a web page.
 
 **Visit [the website](http://antrikshy.github.io/Tinseltown.js) for a demo.** Or clone this repo and take a look at `examples/basic.html`.
 
