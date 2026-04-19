@@ -12,11 +12,11 @@ function initAnimation(animationName, maxDelay) {
 function tnslReplaceRandom(animations) {
     if (animations === undefined) animations = ["flicker", "flickerQuick", "slideFromLeft", "slideFromRight"];
     var elements = document.getElementsByClassName("tnsl-random");
-    
+
     while (elements.length) {
         var element = elements[0];
         var randomClass = "tnsl-" + animations[Math.floor((Math.random() * animations.length + 0))];
-        
+
         element.classList.remove("tnsl-random");
         element.classList.add(randomClass);
     }
@@ -66,3 +66,15 @@ function tnslInit(maxDelay) {
     tnslReplaceRandom();
     tnslPlayAll(maxDelay);
 }
+
+export default {
+    tnslInit,
+    tnslReplaceRandom,
+    tnslPlayFlicker,
+    tnslPlayFlickerQuick,
+    tnslPlaySlideFromLeft,
+    tnslPlaySlideFromRight,
+    tnslPlayAllFlicker,
+    tnslPlayAllSlide,
+    tnslPlayAll
+};

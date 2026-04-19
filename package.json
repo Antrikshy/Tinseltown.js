@@ -1,6 +1,6 @@
 {
   "name": "Tinseltown.js",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "repository": {
     "type": "git",
     "url": "https://github.com/Antrikshy/Tinseltown.js"
@@ -9,11 +9,37 @@
   "description": "Front-end library to help design Hollywood style flashy load-up sequences for various elements on a page.",
   "author": "Antriksh Yadav",
   "license": "MIT",
+  "keywords": [
+    "css",
+    "ui library",
+    "design",
+    "visual flair",
+    "visual effects",
+    "effects",
+    "flashing"
+  ],
+  "exports": {
+    ".": "./dist/tinseltown.min.js",
+    "./css": "./dist/tinseltown.min.css"
+  },
+  "sideEffects": [
+    "*.css"
+  ],
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "gulp",
+    "prepublishonly": "npm run build"
+  },
   "devDependencies": {
     "gulp": "^5.0.0",
     "gulp-autoprefixer": "^7.0.1",
+    "gulp-clean-css": "^4.3.0",
     "gulp-rename": "^1.4.0",
-    "gulp-sass": "^5.1.0",
-    "gulp-uglify": "^3.0.2"
+    "gulp-rollup-each": "^4.0.1",
+    "gulp-sass": "^6.0.1",
+    "gulp-uglify": "^3.0.2",
+    "sass": "^1.99.0"
   }
 }

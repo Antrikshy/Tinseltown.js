@@ -1,6 +1,6 @@
 # Tinseltown.js
 
-Tinseltown is a small (< 4KB) JS and CSS front-end library to add faux flicker loading effects, a la Hollywood hacker movies, to various elements on a web page.
+Tinseltown is a small (~8KB) JS and CSS front-end library to add faux flicker loading effects, a la Hollywood hacker movies, to various elements on a web page.
 
 **Visit [the website](http://antrikshy.github.io/Tinseltown.js) for a demo.** Or clone this repo and take a look at `examples/basic.html`.
 
@@ -8,7 +8,42 @@ Tinseltown uses CSS animations for the effects themselves, but needs to have a s
 
 ## Getting Started
 
-The **easiest method** is to simply drop the compiled tinseltown.min.js and tinseltown.min.css files from the root folder of this repo into the front-end of whatever web project you are working on. You can now skip to the [Usage](#usage) section and use everything as-is.
+The **easiest method** is to simply drop the compiled tinseltown.umd.min.js and tinseltown.min.css files from the root folder of this repo into the front-end of whatever web project you are working on. You can now skip to the [Usage](#usage) section and use everything as-is.
+
+For a more modern install into a project that's built on Node using a bundler:
+
+```
+npm install --save Tinseltown.js
+```
+
+### Module Imports
+
+To integrate Tinseltown.js into modern front-end development, the method depends on whether you are using a bundler (like Webpack, Rollup, or Vite) or a direct script tag. **The package ships both an ESM build (`tinseltown.esm.min.js`) and a UMD build (`tinseltown.umd.min.js`).**
+
+#### 1. ES Modules (ESM) - Recommended
+Use this method if your project supports standard JavaScript modules (using `import`/`export`).
+
+```javascript
+import Tinseltown from 'tinseltown/tinseltown.esm.min.js';
+Tinseltown.tnslInit();
+```
+
+#### 2. CommonJS (Node.js/RequireJS)
+Use this method in older module environments that rely on `require()`.
+
+```javascript
+const Tinseltown = require('tinseltown');
+Tinseltown.tnslInit();
+```
+
+#### 3. Legacy/Vanilla JavaScript (Global Scope / UMD)
+For projects that do not use a bundler, download the .umd.min.js and .min.css files directly, place them somewhere in your project, and use `script` and `link` tags to reference them.
+
+```javascript
+document.addEventListener('DOMContentLoaded', () => {
+    Tinseltown.tnslInit();
+});
+```
 
 ### Customizing Animation Timings (Advanced)
 
@@ -16,12 +51,14 @@ It is possible to use Sass variables to customize animation timings if you want 
 
 In your Sass file, set any of the variables in the following example to CSS time values of your choice *before* importing tinseltown.min.css.
 
-    $tnsl-flicker-duration: 1s;             // default 0.5s
-    $tnsl-flickerQuick-duration: 0.5s;      // default 0.2s
-    $tnsl-slideFromLeft-duration: 0.2s;     // default 0.1s
-    $tnsl-slideFromRight-duration: 0.2s;    // default 0.1s
+```scss
+$tnsl-flicker-duration: 1s;             // default 0.5s
+$tnsl-flickerQuick-duration: 0.5s;      // default 0.2s
+$tnsl-slideFromLeft-duration: 0.2s;     // default 0.1s
+$tnsl-slideFromRight-duration: 0.2s;    // default 0.1s
 
-    @import 'tinseltown.scss'               // place *after* overriden variables
+@import 'tinseltown.scss'               // place *after* overriden variables
+```
 
 > **Note:** The default values above were chosen to look good when used with the default `maxDelay` value of 1 second and vice versa.
 
@@ -31,14 +68,18 @@ Of course, feel free to **download the tinseltown.scss file directly** from the 
 
 Once the JS and CSS files are available to use in your project's front-end, use the following CSS classes to set animations.
 
-    tnsl-flicker            // standard Hollywood-style flicker effect
-    tnsl-flickerQuick       // shorter variant of flicker
-    tnsl-slideFromLeft      // quick slide from left (using translate3d(-100%, 0, 0))
-    tnsl-slideFromRight     // quick slide from right (using translate3d(100%, 0, 0))
+```
+.tnsl-flicker            /* standard Hollywood-style flicker effect */
+.tnsl-flickerQuick       /* shorter variant of flicker */
+.tnsl-slideFromLeft      /* quick slide from left (using translate3d(-100%, 0, 0)) */
+.tnsl-slideFromRight     /* quick slide from right (using translate3d(100%, 0, 0)) */
+```
 
 In many cases, however, your design may benefit from some randomness. This is why a special, random animation class is included as well.
 
-    tnsl-random
+```
+.tnsl-random
+```
 
 When you trigger the basic case (described in the [next section](#basic-trigger)), all elements with the `tnsl-random` class are first randomly assigned one of the above animation classes before playing. Every time the page loads, your `tnsl-random` classes may get a different set of effects.
 
@@ -46,7 +87,9 @@ When you trigger the basic case (described in the [next section](#basic-trigger)
 
 Once you are ready to trigger the animations, call
 
-    tnslInit([maxDelay])
+```javascript
+tnslInit([maxDelay])
+```
 
 where `maxDelay` is the longest time (in seconds) that you want to allow any single `animation-delay` value to be.
 
@@ -58,8 +101,10 @@ You can omit the argument if you want, and a default of 1 second will be used.
 
 If you want to trigger the animations at page load time, simply use
 
-    window.onload = function() { tnslInit(); }      // without jQuery
-    $(document).ready(function() { tnslInit(); });  // with jQuery
+```javascript
+window.onload = function() { tnslInit(); }      // without jQuery
+$(document).ready(function() { tnslInit(); });  // with jQuery
+```
 
 or otherwise add the function call to whatever handles your page load scripts.
 
@@ -118,10 +163,10 @@ Tinseltown.js could use some help. If you find issues, or just want to contribut
 1. Have Node.js and npm installed.
 2. Clone this repo and run `npm install` at the top level.
 3. Edit src/tinseltown.js and src/tinseltown.scss.
-4. Run `npx gulp` to build the tinseltown.min.* files (do not edit these files directly). Optionally, run `npx gulp watch` to update the minified files as you make your edits in src.
+4. Run `npm run build` to build tinseltown.*.min.js and tinseltown.min.css files into the dist folder. Optionally, run `npx gulp watch` to update the minified files as you make your edits in src.
 5. Open example/basic.html in your browser or import these minified files into your own local HTML file to test visually.
 
-You can contact me [@Antrikshy](https://twitter.com/Antrikshy) or via private messaging [on reddit](https://reddit.com/u/Antrikshy).
+You can contact me via [Reddit Chat](https://reddit.com/u/Antrikshy).
 
 ### Potential Features
 

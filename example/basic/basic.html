@@ -3,8 +3,8 @@
 
     <!-- Include Tinseltown.js -->
 
-    <script type="text/javascript" src="../tinseltown.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="../tinseltown.min.css">
+    <script type="text/javascript" src="../../dist/tinseltown.umd.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="../../dist/tinseltown.min.css">
 
     <link rel="stylesheet" type="text/css" href="./styles.css">
 
@@ -12,13 +12,13 @@
     <!-- You can optionally (def. 1) pass it a max aggregate time delay (in seconds) for the effects -->
 
     <script type="text/javascript">
-        window.onload = function() { tnslInit(5); };
+        window.onload = function() { window.Tinseltown.tnslInit(5); };
     </script>
 </head>
 <body>
     <h1>Tinseltown.js</h1>
     <div class="left-col">
-        
+
         <!-- Just add effect classes to any element: -->
 
         <div class="demo-square tnsl-flicker"></div>
